@@ -8,7 +8,7 @@ public class ShootGun : MonoBehaviour
     Vector3 verticalStep;
     Vector3 horizontalStep;
     public float movementSpeed = 2;
-    const int bulletSpeed = 100;
+    const int bulletSpeed = 5;
     public int rateOfFire = 50;
     private int fireRateTimer = 0;
 
