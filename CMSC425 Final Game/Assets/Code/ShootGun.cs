@@ -8,16 +8,9 @@ public class ShootGun : MonoBehaviour
     Vector3 verticalStep;
     Vector3 horizontalStep;
     public float movementSpeed = 2;
-    const int bulletSpeed = 1000;
+    const int bulletSpeed = 100;
     public int rateOfFire = 50;
     private int fireRateTimer = 0;
-    private float delta_x;
-    private float delta_y;
-
-    private float currentRotationX = 0f;
-    private float currentRotationY = 0f;
-    private float smooth = 5.0f;
-    public float cameraSpeed = 1000f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +27,7 @@ public class ShootGun : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        HandleMovement();
-        HandleCameraRotation();
+        //HandleMovement();
     }
 
     // Smoothly translates the player movement
@@ -43,20 +35,6 @@ public class ShootGun : MonoBehaviour
     {
         transform.Translate(verticalStep * Time.deltaTime * Input.GetAxis("Vertical"));
         transform.Translate(horizontalStep * Time.deltaTime * Input.GetAxis("Horizontal"));
-    }
-
-    // Smoothly rotates the camera based off of mouse inputs
-    void HandleCameraRotation()
-    {
-        // Calculate values for next rotation
-        delta_x = Input.GetAxis("Mouse Y");
-        delta_y = Input.GetAxis("Mouse X");
-        currentRotationX = Mathf.Clamp(currentRotationX - delta_x * cameraSpeed * Time.deltaTime, -80f, 80f);
-        currentRotationY += delta_y * cameraSpeed * Time.deltaTime;
-
-        // Define the rotation
-        Quaternion target = Quaternion.Euler(currentRotationX, currentRotationY, 0);
-        this.transform.localRotation = Quaternion.Slerp(transform.localRotation, target, Time.deltaTime * smooth);
     }
 
     // Checks if the player has pressed the fire button
