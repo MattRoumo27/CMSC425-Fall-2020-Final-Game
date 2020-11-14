@@ -26,7 +26,7 @@ public class CameraRotation : MonoBehaviour
     private void Update() 
     {
         RotateCamera();
-        CheckForShooting();
+        // CheckForShooting();
     }
 
     private void RotateCamera()
