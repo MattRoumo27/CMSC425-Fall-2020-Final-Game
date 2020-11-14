@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpRayCastDistance = 1;
 
     public CharacterController controller;
+    public AudioSource audioSource;
+    public AudioClip footsteps;
 
     Vector3 velocity;
     public float gravity = -9.81f;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Jump();
         Move();
+        PlayFootStepSounds();
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0) 
@@ -44,15 +47,24 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
+    private void PlayFootStepSounds() 
+    {
+        if (isGrounded && controller && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
+        {
+            audioSource.clip = footsteps;
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        } 
+        else 
+        {
+            audioSource.Pause();
+        }
+    }
+
     private void Jump() 
     {
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     if (IsGrounded()) 
-        //     {
-        //         //controller.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-        //     }
-        // }
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);

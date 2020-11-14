@@ -15,6 +15,17 @@ public class WeaponSwitching : MonoBehaviour
     {
         int previousSelectedWeapon = selectedWeapon;
 
+        ScrollWheel();
+        NumKeys();
+        
+        if (previousSelectedWeapon != selectedWeapon)
+        {
+            SelectWeapon();
+        }
+    }
+
+    void ScrollWheel() 
+    {
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             if (selectedWeapon >= transform.childCount - 1)
@@ -36,7 +47,10 @@ public class WeaponSwitching : MonoBehaviour
                 selectedWeapon--;
             }
         }
+    }
 
+    void NumKeys() 
+    {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 0;
@@ -55,11 +69,6 @@ public class WeaponSwitching : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4) && transform.childCount >= 4)
         {
             selectedWeapon = 3;
-        }
-
-        if (previousSelectedWeapon != selectedWeapon)
-        {
-            SelectWeapon();
         }
     }
 
