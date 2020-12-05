@@ -20,10 +20,22 @@ public class EquipmentManager : MonoBehaviour
 
     Inventory inventory;
 
+    public Equipment[] startingEquipment;
+    public GameObject[] objectPrefabs;
+    public GameObject player;
+    public GameObject primaryWeapon;
+    public GameObject secondaryWeapon;
+
     private void Start()
     {
         currentEquipment = new Equipment[System.Enum.GetNames(typeof(EquipmentSlot)).Length];
         inventory = Inventory.instance;
+
+        for (int i = 0; i < startingEquipment.Length; i++)
+        {
+            Equip(startingEquipment[i]);
+        }
+
     }
 
     public void Equip (Equipment newItem)
@@ -34,10 +46,10 @@ public class EquipmentManager : MonoBehaviour
 
         if (oldItem != null)
         {
-            inventory.Add(oldItem);
+            Drop(oldItem, slotIndex);
         }
            currentEquipment[slotIndex] = newItem;
-
+        ChangeStats(newItem, slotIndex);
         if (onEquipmentChanged != null)
             onEquipmentChanged.Invoke(newItem, oldItem);
             
@@ -49,12 +61,30 @@ public class EquipmentManager : MonoBehaviour
 
         if (oldItem != null)
         {
-            if (inventory.Add(oldItem) != false)
-            {
+            Drop(oldItem, slotIndex);
                 currentEquipment[slotIndex] = null;
                 if (onEquipmentChanged != null)
                     onEquipmentChanged.Invoke(null, oldItem);
-            }
+            
+        }
+    }
+
+    public void Drop(Equipment oldItem, int slotIndex)
+    {
+        GameObject droppedItem = objectPrefabs[slotIndex];
+        droppedItem.GetComponent<EquipmentPickup>().equipment = oldItem;
+        Instantiate(droppedItem, player.transform.position + player.transform.forward + new Vector3(0, 0.1f,0) , Quaternion.Euler(0, 0, 90));
+    }
+
+    public void ChangeStats(Equipment newItem, int slotIndex)
+    {
+        if (slotIndex == 0)
+        {
+            primaryWeapon.GetComponent<Gun>().damage = newItem.damageModifier; 
+        }
+        else if (slotIndex == 1)
+        {
+            secondaryWeapon.GetComponent<Gun>().damage = newItem.damageModifier;
         }
     }
 

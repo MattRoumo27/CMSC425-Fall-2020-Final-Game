@@ -22,7 +22,7 @@ public class Raycast : MonoBehaviour
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
 
-            if (hit.collider.CompareTag("Inventory Object"))
+            if (hit.collider.CompareTag("Interactable"))
             {
                 raycastedObj = hit.collider.gameObject;
 
@@ -36,7 +36,20 @@ public class Raycast : MonoBehaviour
                     interactable.Interact();
                 }
             }
-        }
+       /*     else if (hit.collider.CompareTag("Equipment"))
+            {
+                raycastedObj = hit.collider.gameObject;
+
+                //change crosshair
+                CrossHairActive();
+
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Interacted with an object");
+                    EquipmentManager.instance.Equip((Equipment)interactable);
+                } */
+            } 
 
         else
         {
