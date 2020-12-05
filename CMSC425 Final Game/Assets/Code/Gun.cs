@@ -17,6 +17,8 @@ public class Gun : MonoBehaviour
     public ParticleSystem sparkFlash;
     public GameObject impactEffect;
 
+    public PlayerManager playerManager;
+
     private float nextTimeToFire = 0f;
 
     public Animator animator;
@@ -36,6 +38,8 @@ public class Gun : MonoBehaviour
         currentAmmo = maxAmmo; 
         audioSource = GetComponent<AudioSource>();
         magazineInitialPos = gunMagazine.transform.localPosition;
+
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
     }
 
     void OnEnable() 
@@ -63,15 +67,20 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        //Only shoot or reload if the UI is not opened
+        if (playerManager.getUI() == false)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
-        }
 
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo) 
-        {
-            StartCoroutine(Reload());
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
+
+            if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
+            {
+                StartCoroutine(Reload());
+            }
         }
     }
 

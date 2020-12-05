@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
         }
-        
+
     }
 
     private void Move() 
