@@ -164,6 +164,12 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
 
+            AimTargetBehavior aimTarget = hit.transform.GetComponent<AimTargetBehavior>();
+            if (aimTarget != null)
+            {
+                aimTarget.killAimTarget();
+            }
+
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 2f);
         }
