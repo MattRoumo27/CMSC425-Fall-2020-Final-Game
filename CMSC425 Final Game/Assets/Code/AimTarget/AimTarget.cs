@@ -19,7 +19,7 @@ public class AimTarget : ScriptableObject
         if (numberOfTargetsAlive == 0)
         {
             // Set bridge down after all targets have been shot by the player
-
+            
         }
     }
 }
