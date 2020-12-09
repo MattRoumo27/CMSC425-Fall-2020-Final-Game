@@ -9,13 +9,15 @@ public class Gun : MonoBehaviour
     public float fireRate = 15f;
 
     public int maxAmmo = 10;
-    private int currentAmmo;
+    public int currentAmmo;
     public float reloadTime = 1f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public ParticleSystem sparkFlash;
     public GameObject impactEffect;
+
+    public PlayerManager playerManager;
 
     private float nextTimeToFire = 0f;
 
@@ -36,6 +38,8 @@ public class Gun : MonoBehaviour
         currentAmmo = maxAmmo; 
         audioSource = GetComponent<AudioSource>();
         magazineInitialPos = gunMagazine.transform.localPosition;
+
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
     }
 
     void OnEnable() 
@@ -63,15 +67,20 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        //Only shoot or reload if the UI is not opened
+        if (playerManager.getUI() == false)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
-        }
 
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo) 
-        {
-            StartCoroutine(Reload());
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
+
+            if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
+            {
+                StartCoroutine(Reload());
+            }
         }
     }
 
@@ -86,7 +95,6 @@ public class Gun : MonoBehaviour
 
         float interpolationParameter = 1;
         Debug.Log("Reloading...");
-
         audioSource.PlayOneShot(reloadSound);
         Vector3 newPosition = gunMagazine.transform.localPosition - new Vector3(0, 0.15f, 0);
 
@@ -153,6 +161,12 @@ public class Gun : MonoBehaviour
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
+            }
+
+            AimTargetBehavior aimTarget = hit.transform.GetComponent<AimTargetBehavior>();
+            if (aimTarget != null)
+            {
+                aimTarget.killAimTarget();
             }
 
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));

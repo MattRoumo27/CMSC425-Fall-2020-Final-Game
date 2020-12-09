@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
         }
+
     }
 
     private void Move() 
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayFootStepSounds() 
     {
-        if (isGrounded && controller && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
+        if (isGrounded && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
         {
             audioSource.clip = footsteps;
             if (!audioSource.isPlaying)

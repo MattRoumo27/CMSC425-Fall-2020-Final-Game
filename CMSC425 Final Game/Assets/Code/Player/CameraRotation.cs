@@ -7,6 +7,8 @@ public class CameraRotation : MonoBehaviour
     public float lookSensitivity = 2;
     public float smoothing = 5;
 
+    public PlayerManager playerManager;
+
     private GameObject player;
     private Vector2 smoothedVelocity;
     private Vector2 currentLookingPosition;
@@ -21,11 +23,16 @@ public class CameraRotation : MonoBehaviour
     {
         player = transform.parent.gameObject;
         Cursor.lockState = CursorLockMode.Locked;
+
+        playerManager = GameObject.Find("Player").GetComponent<PlayerManager>();
     }
 
     private void Update() 
     {
-        RotateCamera();
+        //Only rotate camera if the UI is not opened
+        if (playerManager.getUI() == false)
+            RotateCamera();
+
         // CheckForShooting();
     }
 
