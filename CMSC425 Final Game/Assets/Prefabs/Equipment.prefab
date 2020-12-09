@@ -317,6 +317,7 @@ MonoBehaviour:
   equipmentIcon: {fileID: 3630956271962449687}
   defaultIcon: {fileID: 3197085323897267081}
   removeButton: {fileID: 3630956270656478416}
+  damageText: {fileID: 0}
 --- !u!114 &1421033844624456142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +333,7 @@ MonoBehaviour:
   equipmentIcon: {fileID: 4775627027045846735}
   defaultIcon: {fileID: 6664065409548552785}
   removeButton: {fileID: 4775627028892890376}
+  damageText: {fileID: 0}
 --- !u!1001 &573043114655309259
 PrefabInstance:
   m_ObjectHideFlags: 0

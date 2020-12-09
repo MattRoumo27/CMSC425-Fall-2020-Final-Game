@@ -47,6 +47,14 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void Heal(int value)
+    {
+        currentHealth += value;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        healthValue.text = "" + currentHealth;
+        healthBar.SetHealth(currentHealth);
+    }
+
 
 
 }

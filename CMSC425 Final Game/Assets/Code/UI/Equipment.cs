@@ -7,7 +7,6 @@ public class Equipment : Item
 {
     public EquipmentSlot equipSlot;
 
-    public int armorModifier;
     public int damageModifier;
 
     public override void Use()

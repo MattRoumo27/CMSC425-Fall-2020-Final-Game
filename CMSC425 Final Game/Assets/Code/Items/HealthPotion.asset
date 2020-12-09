@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e0929c56e44a74c874352b8b1b9406, type: 3}
-  m_Name: test Helmet
+  m_Script: {fileID: 11500000, guid: 1eb7898576fb1e44d886424dd9125729, type: 3}
+  m_Name: HealthPotion
   m_EditorClassIdentifier: 
-  name: Helmet
-  icon: {fileID: -5275974221471470513, guid: 948074611f46ba441b4e25a4fd5a8716, type: 3}
-  equipSlot: 2
-  armorModifier: 0
-  damageModifier: 0

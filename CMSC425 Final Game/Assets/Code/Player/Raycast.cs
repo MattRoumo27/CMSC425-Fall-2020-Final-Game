@@ -108,11 +108,7 @@ public class Raycast : MonoBehaviour
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        /*tooltipDuration = 0;
-                        tooltip.SetActive(false);
-                        tooltip = null;
-                        //tooltip.SetActive(false);
-                         */
+                       
                         tooltip.transform.GetChild(1).GetChild(2).GetComponent<Text>().text = EquipmentManager.instance.currentEquipment[1].damageModifier.ToString();
                         tooltip.transform.GetChild(0).GetChild(2).GetComponent<Text>().text = interactable.GetComponent<EquipmentPickup>().equipment.damageModifier.ToString();
                         tooltipDuration = 0.2f;
@@ -124,47 +120,12 @@ public class Raycast : MonoBehaviour
 
                 }
 
-                /* if (hit.collider.CompareTag("AR"))
-                 {
-                     tooltip = ARTooltip;
-                     if (tip == null)
-                     {
-                         tooltip.transform.GetChild(0).GetChild(2).GetComponent<Text>().text = EquipmentManager.instance.currentEquipment[0].damageModifier.ToString();
-                         tooltip.transform.GetChild(1).GetChild(2).GetComponent<Text>().text = interactable.GetComponent<EquipmentPickup>().equipment.damageModifier.ToString();
-                         tip = Instantiate(tooltip, player.transform.position + player.transform.forward + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                        // tip.transform.GetChild(0).transform.position = player.transform.position + player.transform.forward + new Vector3(0, 0.5f, 0);
-                         //tip.transform.GetChild(1).transform.position = player.transform.position + player.transform.forward + new Vector3(0, 0.5f, 0);
-                         tooltipDuration = 10f;
-                     }
-                     if (Input.GetKeyDown(KeyCode.E))
-                     {
-                         if (tip != null)
-                         {
-                             Destroy(tip);
-                             tooltip.transform.GetChild(1).GetChild(2).GetComponent<Text>().text = EquipmentManager.instance.currentEquipment[0].damageModifier.ToString();
-                             tooltip.transform.GetChild(0).GetChild(2).GetComponent<Text>().text = interactable.GetComponent<EquipmentPickup>().equipment.damageModifier.ToString();
-                             tip = Instantiate(tooltip, player.transform.position + player.transform.forward + new Vector3(0, 0.5f, 0), Quaternion.identity);
-                             tooltipDuration = 0.5f;
-                         }
-                         Debug.Log("Interacted with an object");
-                         interactable.Interact();
+             
 
-                     }
-                 }
-                */
-
-                /*  else if (hit.collider.CompareTag("Pistol"))
-                  {
-
-
-                      if (Input.GetKeyDown(KeyCode.E))
-                      {
-                          Debug.Log("Interacted with an object");
-                          interactable.Interact();
-
-                      }
-                  } */
-
+            }
+            else if (hit.collider.CompareTag("HealthPotion")){
+                if (Input.GetKeyDown(KeyCode.E))
+                    interactable.Interact();
             }
 
         } 

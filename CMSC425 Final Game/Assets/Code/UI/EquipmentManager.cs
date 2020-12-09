@@ -80,11 +80,13 @@ public class EquipmentManager : MonoBehaviour
     {
         if (slotIndex == 0)
         {
-            primaryWeapon.GetComponent<Gun>().damage = newItem.damageModifier; 
+            primaryWeapon.GetComponent<Gun>().damage = newItem.damageModifier;
+            primaryWeapon.GetComponent<Gun>().currentAmmo = primaryWeapon.GetComponent<Gun>().maxAmmo;
         }
         else if (slotIndex == 1)
         {
             secondaryWeapon.GetComponent<Gun>().damage = newItem.damageModifier;
+            secondaryWeapon.GetComponent<Gun>().currentAmmo = secondaryWeapon.GetComponent<Gun>().maxAmmo;
         }
     }
 
