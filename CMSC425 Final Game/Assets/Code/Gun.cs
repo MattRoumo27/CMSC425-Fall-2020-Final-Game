@@ -95,7 +95,6 @@ public class Gun : MonoBehaviour
 
         float interpolationParameter = 1;
         Debug.Log("Reloading...");
-
         audioSource.PlayOneShot(reloadSound);
         Vector3 newPosition = gunMagazine.transform.localPosition - new Vector3(0, 0.15f, 0);
 
