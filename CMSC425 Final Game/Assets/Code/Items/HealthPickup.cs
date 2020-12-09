@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPickup : Interactable
 {
-    public HealthPotion healthPotion;
+    public HealthPack healthPack;
     public override void Interact()
     {
         base.Interact();
@@ -15,7 +15,7 @@ public class HealthPickup : Interactable
     public void PickUp()
     {
 
-        bool successfulPickup = HealthManager.instance.AddPotion();
+        bool successfulPickup = HealthManager.instance.AddHealthPack();
         if (successfulPickup)
             Destroy(gameObject);
     }

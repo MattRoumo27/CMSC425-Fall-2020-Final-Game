@@ -56,6 +56,8 @@ public class Raycast : MonoBehaviour
                 {
                     notRotated = false;
 
+                  //  tooltip.transform.LookAt(player.transform);
+                    
                     float xDiff = player.transform.position.x - interactable.transform.position.x;
                     float zDiff = player.transform.position.z - interactable.transform.position.z;
 
@@ -82,6 +84,7 @@ public class Raycast : MonoBehaviour
                             tooltip.transform.localEulerAngles = new Vector3(180, 0, -90);
                         }
                     }
+                    
                 }
 
                 if (hit.collider.CompareTag("AR"))
@@ -123,7 +126,7 @@ public class Raycast : MonoBehaviour
              
 
             }
-            else if (hit.collider.CompareTag("HealthPotion")){
+            else if (hit.collider.CompareTag("HealthPack")){
                 if (Input.GetKeyDown(KeyCode.E))
                     interactable.Interact();
             }
