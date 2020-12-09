@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
     public float fireRate = 15f;
 
     public int maxAmmo = 10;
-    private int currentAmmo;
+    public int currentAmmo;
     public float reloadTime = 1f;
 
     public Camera fpsCam;

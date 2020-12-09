@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickup : Interactable
+public class HealthPickup : Interactable
 {
-
-    public Item item;
+    public HealthPotion healthPotion;
     public override void Interact()
     {
         base.Interact();
@@ -15,11 +14,9 @@ public class ItemPickup : Interactable
 
     public void PickUp()
     {
-        bool successfulPickup;
 
-        successfulPickup = Inventory.instance.Add(item);
+        bool successfulPickup = HealthManager.instance.AddPotion();
         if (successfulPickup)
             Destroy(gameObject);
     }
-        
 }

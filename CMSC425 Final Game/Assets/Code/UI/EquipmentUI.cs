@@ -24,8 +24,7 @@ public class EquipmentUI : MonoBehaviour
         {
             if (equipment.currentEquipment[i] != null)
             {
-                Debug.Log("Printing: " + equipment.currentEquipment[i]);
-                Debug.Log("Slot: " + slots[i]);
+
                 slots[i].AddItem(equipment.currentEquipment[i]);
             }
             else

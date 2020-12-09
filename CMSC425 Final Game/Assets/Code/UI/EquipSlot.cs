@@ -7,6 +7,7 @@ public class EquipSlot : MonoBehaviour
     public Image equipmentIcon;
     public Image defaultIcon;
     public Button removeButton;
+    public Text damageText;
     Equipment equipment;
 
     public void AddItem(Equipment newEquipment)
@@ -14,18 +15,13 @@ public class EquipSlot : MonoBehaviour
         equipment = newEquipment;
 
         equipmentIcon.sprite = equipment.icon;
-        equipmentIcon.enabled = true;
-        defaultIcon.enabled = false;
-        removeButton.interactable = true;
+        damageText.text = newEquipment.damageModifier.ToString();
     }
 
     public void ClearSlot()
     {
         equipment = null;
-        equipmentIcon.sprite = null;
-        equipmentIcon.enabled = false;
-        defaultIcon.enabled = true;
-        removeButton.interactable = false;
+
     }
 
     public void OnRemoveButton()
