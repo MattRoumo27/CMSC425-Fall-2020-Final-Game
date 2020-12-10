@@ -24,7 +24,7 @@ public class Transition : MonoBehaviour
         yield return new WaitForSeconds(1);
         Debug.Log(player.position);
         Vector3 path = location.position;
-        for (int i = 0; i< 1000; i++)
+        for (int i = 0; i< 100; i++)
         {
             player.position = path;
             Debug.Log(player.position);

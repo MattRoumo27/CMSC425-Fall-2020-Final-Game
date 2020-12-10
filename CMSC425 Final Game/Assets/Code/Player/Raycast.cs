@@ -8,7 +8,7 @@ public class Raycast : MonoBehaviour
 
     private GameObject raycastedObj;
 
-    [SerializeField] private int rayLength = 10;
+    [SerializeField] private int rayLength = 2;
     [SerializeField] private LayerMask layerMaskInteract;
 
     [SerializeField] private Image uiCrosshair;
