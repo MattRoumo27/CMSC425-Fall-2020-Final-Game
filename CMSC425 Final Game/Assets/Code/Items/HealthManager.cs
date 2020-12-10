@@ -46,7 +46,7 @@ public class HealthManager : MonoBehaviour
         }   
     }
 
-    public bool AddPotion()
+    public bool AddHealthPack()
     {
         if (currentCount + 1 <= maxCount)
         {
