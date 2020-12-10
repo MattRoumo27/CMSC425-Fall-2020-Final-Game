@@ -33,6 +33,8 @@ public class Gun : MonoBehaviour
     private bool isReloading = false;
     Vector3 magazineInitialPos;
 
+    public bool isPaused = false;
+
     private void Start() 
     {
         currentAmmo = maxAmmo; 
@@ -70,16 +72,18 @@ public class Gun : MonoBehaviour
         //Only shoot or reload if the UI is not opened
         if (playerManager.getUI() == false)
         {
-
-            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            if (!isPaused)
             {
-                nextTimeToFire = Time.time + 1f / fireRate;
-                Shoot();
-            }
+                if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+                {
+                    nextTimeToFire = Time.time + 1f / fireRate;
+                    Shoot();
+                }
 
-            if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
-            {
-                StartCoroutine(Reload());
+                if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
+                {
+                    StartCoroutine(Reload());
+                }
             }
         }
     }
