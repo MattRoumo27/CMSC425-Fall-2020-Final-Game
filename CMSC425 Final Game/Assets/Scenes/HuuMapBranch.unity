@@ -597,12 +597,6 @@ Transform:
   m_Father: {fileID: 1708176049}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &157489160 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6951633079112576536, guid: 4e7384c878ba8d34ab026da92fc810b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2134873060}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &157636238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2267,6 +2261,7 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: fefb363a97ae60a478551b5535197b78, type: 3}
   emptyClipReload: {fileID: 8300000, guid: 0518cc2bf681f2341be653bd7ba77beb, type: 3}
   gunMagazine: {fileID: 111504071}
+  isPaused: 0
 --- !u!82 &398730232
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5841,7 +5836,7 @@ MonoBehaviour:
   layerMaskInteract:
     serializedVersion: 2
     m_Bits: 512
-  uiCrosshair: {fileID: 0}
+  uiCrosshair: {fileID: 1354451741}
   ARTooltip: {fileID: 2134247492133225799, guid: 85891defb15bb484c91b4fa943f850ab,
     type: 3}
   player: {fileID: 1108295496}
@@ -5859,7 +5854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookSensitivity: 2
   smoothing: 2
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 1108295498}
   mouseSensitivity: 250
   playerBody: {fileID: 1108295502}
 --- !u!81 &1117185216
@@ -6016,8 +6011,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25df99d6bb28e34c8326d83304d61e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 1808002947}
-  equipmentUI: {fileID: 157489160}
+  inventoryUI: {fileID: 0}
+  equipmentUI: {fileID: 0}
   playerManager: {fileID: 1108295498}
 --- !u!114 &1150767807
 MonoBehaviour:
@@ -8435,6 +8430,7 @@ MonoBehaviour:
   reloadSound: {fileID: 8300000, guid: 151bd4a8c9a2301418eda6aa3c3ee499, type: 3}
   emptyClipReload: {fileID: 8300000, guid: b8d0feb98f43f3a4fb6075ac594a6f15, type: 3}
   gunMagazine: {fileID: 144459859}
+  isPaused: 0
 --- !u!82 &1652448232
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9298,12 +9294,6 @@ RectTransform:
   m_AnchoredPosition: {x: 67.1, y: 16}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1808002947 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8346632776321615767, guid: 4e7384c878ba8d34ab026da92fc810b5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2134873060}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1815829833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10828,6 +10818,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 486969399, guid: 4e7384c878ba8d34ab026da92fc810b5, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2723725201479830070, guid: 4e7384c878ba8d34ab026da92fc810b5,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -10867,6 +10861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812847353899964637, guid: 4e7384c878ba8d34ab026da92fc810b5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6190564532325377006, guid: 4e7384c878ba8d34ab026da92fc810b5,
         type: 3}
