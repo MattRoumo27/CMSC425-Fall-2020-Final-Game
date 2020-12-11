@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2358938988299114798}
   - component: {fileID: 8322700394071893463}
   - component: {fileID: 6424947921528070692}
+  - component: {fileID: 505384755732042532}
   m_Layer: 0
   m_Name: ForestTreeSpruce_02
   m_TagString: Untagged
@@ -89,8 +90,21 @@ MeshCollider:
   m_GameObject: {fileID: 7763359017756954891}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7620298467710358605, guid: 5e7d094e646de6847846fd7b0f5a4d6f, type: 3}
+--- !u!65 &505384755732042532
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7763359017756954891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07376766, y: 0.7300906, z: 0.07305908}
+  m_Center: {x: 0.0005059242, y: 0.3650453, z: -0.0015125275}
