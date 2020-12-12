@@ -12,6 +12,7 @@ public class CameraManager : MonoBehaviour
     const int bridgeCamera = 1;
 
     public bool isMoving = false;
+    public bool canMovePlayer = true;
     public float moveTime = 5f;
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class CameraManager : MonoBehaviour
     {
         cameras[mainCamera].enabled = false;
         cameras[bridgeCamera].enabled = true;
+        canMovePlayer = false;
 
         float interpolationParameter = 0;
         isMoving = true;
@@ -51,5 +53,6 @@ public class CameraManager : MonoBehaviour
 
         cameras[bridgeCamera].enabled = false;
         cameras[mainCamera].enabled = true;
+        canMovePlayer = true;
     }
 }
