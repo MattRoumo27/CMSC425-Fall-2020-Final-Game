@@ -7,6 +7,7 @@ public class AimTarget : ScriptableObject
 {
     public int numberOfTargetsAlive;
     public int initialTargetsAlive;
+
     private GameObject bridge;
     private MeshRenderer bridgeRender;
 
@@ -17,7 +18,7 @@ public class AimTarget : ScriptableObject
         bridgeRender = bridge.GetComponent<MeshRenderer>();
     }
 
-    public void TargetHit()
+    public void TargetHit(AimTargetBehavior caller)
     {
         numberOfTargetsAlive--;
         Debug.Log(bridge.ToString());
@@ -29,6 +30,7 @@ public class AimTarget : ScriptableObject
             if (bridgeRender != null) 
             {
                 bridgeRender.enabled = true;
+                caller.StartCoroutine(caller.RaiseBridge());
             }
             
         }
