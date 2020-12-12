@@ -551,6 +551,7 @@ MonoBehaviour:
   player: {fileID: 1108295502}
   transition: {fileID: 1545159949}
   location: {fileID: 1109260000}
+  zombie: {fileID: 0}
 --- !u!65 &109540137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6127,6 +6128,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  cameraManager: {fileID: 1150767810}
 --- !u!143 &1108295500
 CharacterController:
   m_ObjectHideFlags: 0
@@ -6320,6 +6322,7 @@ MonoBehaviour:
   playerManager: {fileID: 1108295498}
   mouseSensitivity: 250
   playerBody: {fileID: 1108295502}
+  cameraManager: {fileID: 1150767810}
 --- !u!81 &1117185216
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6566,6 +6569,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
   isMoving: 0
+  canMovePlayer: 1
   moveTime: 5
 --- !u!4 &1150926163 stripped
 Transform:
