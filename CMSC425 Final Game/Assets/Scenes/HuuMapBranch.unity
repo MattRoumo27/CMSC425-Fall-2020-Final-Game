@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c995e6bb550c74d12b28129083b0f991, type: 2}
 --- !u!1 &2252126 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5570320925972100852, guid: a13f7bdbd77bc704c9c28fa22c039a5f,
@@ -8233,6 +8233,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7486114120955855211, guid: bb57c1e01794ba34cb07e4798e196cf8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb57c1e01794ba34cb07e4798e196cf8, type: 3}
 --- !u!1001 &1450468296
@@ -8404,6 +8409,11 @@ PrefabInstance:
     - target: {fileID: 7486114120955855211, guid: bb57c1e01794ba34cb07e4798e196cf8,
         type: 3}
       propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486114120955855211, guid: bb57c1e01794ba34cb07e4798e196cf8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9466,6 +9476,7 @@ MonoBehaviour:
   player: {fileID: 1108295502}
   transition: {fileID: 1545159949}
   location: {fileID: 1503041486}
+  zombie: {fileID: 0}
 --- !u!65 &1665287921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11092,6 +11103,7 @@ MonoBehaviour:
   player: {fileID: 1108295502}
   transition: {fileID: 1545159949}
   location: {fileID: 1109260000}
+  zombie: {fileID: 2694931294453138824, guid: 77b3e590525c0476fa5fbd7ed2310d2c, type: 3}
 --- !u!65 &2020462832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11541,6 +11553,10 @@ PrefabInstance:
     - target: {fileID: 1598763813, guid: 4e7384c878ba8d34ab026da92fc810b5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710307259, guid: 4e7384c878ba8d34ab026da92fc810b5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.63208
       objectReference: {fileID: 0}
     - target: {fileID: 2723725201479830070, guid: 4e7384c878ba8d34ab026da92fc810b5,
         type: 3}
