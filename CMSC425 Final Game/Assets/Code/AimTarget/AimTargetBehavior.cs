@@ -8,7 +8,7 @@ public class AimTargetBehavior : MonoBehaviour
     public Transform bridge;
     public Vector3 startPos;
     public Vector3 endPos;
-    public Camera bridgeCamera;
+    public CameraManager cameraManager;
 
     public float raiseTime = 5;
 
@@ -18,12 +18,10 @@ public class AimTargetBehavior : MonoBehaviour
     {
         startPos = bridge.localPosition;
         endPos = new Vector3(0.4524f, 0.053f, 0.984f);
-
     }
 
     public void killAimTarget()
     {
-        // Destroy(gameObject);
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         target.TargetHit(this);
@@ -41,7 +39,6 @@ public class AimTargetBehavior : MonoBehaviour
 
         while (isRaising)
         {
-            Debug.Log("Interp:" + interpolationParameter);
             interpolationParameter = interpolationParameter + 1 * Time.deltaTime / raiseTime;
             if (interpolationParameter >= 1)
             {
@@ -55,8 +52,8 @@ public class AimTargetBehavior : MonoBehaviour
         }
     }
 
-    public IEnumerator TranslateCamera()
+    public void AnimateCamera()
     {
-        yield return null;
+        StartCoroutine(cameraManager.TranslateBridgeCamera());
     }
 }

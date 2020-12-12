@@ -29,8 +29,8 @@ public class AimTarget : ScriptableObject
             // Set bridge down after all targets have been shot by the player
             if (bridgeRender != null) 
             {
-                bridgeRender.enabled = true;
                 caller.StartCoroutine(caller.RaiseBridge());
+                caller.AnimateCamera();
             }
             
         }
