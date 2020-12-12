@@ -16,6 +16,7 @@ public class CameraRotation : MonoBehaviour
     public float mouseSensitivity = 1000f;
 
     public Transform playerBody;
+    public CameraManager cameraManager;
 
     float xRotation = 0f;
 
@@ -30,7 +31,7 @@ public class CameraRotation : MonoBehaviour
     private void Update() 
     {
         //Only rotate camera if the UI is not opened
-        if (playerManager.getUI() == false)
+        if (playerManager.getUI() == false && cameraManager.canMovePlayer)
             RotateCamera();
 
         // CheckForShooting();
@@ -38,19 +39,6 @@ public class CameraRotation : MonoBehaviour
 
     private void RotateCamera()
     {
-        // // Store values of mouse input in a 2D-Vector
-        // Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        
-        // mouseInput = Vector2.Scale(mouseInput, new Vector2(lookSensitivity * smoothing, lookSensitivity * smoothing));
-        
-        // // Apply linear interpolation for smooth transitions
-        // smoothedVelocity.x = Mathf.Lerp(smoothedVelocity.x, mouseInput.x, 1f / smoothing);
-        // smoothedVelocity.y = Mathf.Lerp(smoothedVelocity.y, mouseInput.y, 1f / smoothing);
-
-        // currentLookingPosition += smoothedVelocity;
-
-        // transform.localRotation = Quaternion.AngleAxis(-currentLookingPosition.y, Vector3.right);
-        // player.transform.localRotation = Quaternion.AngleAxis(currentLookingPosition.x, player.transform.up);
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
