@@ -15,6 +15,9 @@ public class CameraManager : MonoBehaviour
     public bool canMovePlayer = true;
     public float moveTime = 5f;
 
+    public AudioSource audioSource;
+    public AudioClip bridgeMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class CameraManager : MonoBehaviour
 
     public IEnumerator TranslateBridgeCamera()
     {
+        audioSource.PlayOneShot(bridgeMusic);
         cameras[mainCamera].enabled = false;
         cameras[bridgeCamera].enabled = true;
         canMovePlayer = false;
