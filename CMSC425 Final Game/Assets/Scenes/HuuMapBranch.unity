@@ -7342,7 +7342,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1
   m_Radius: 0.25
-  m_SlopeLimit: 45
+  m_SlopeLimit: 10
   m_StepOffset: 0.7
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -11236,6 +11236,8 @@ MonoBehaviour:
   nextIsland: {fileID: 1526984161}
   audioSource: {fileID: 1108295503}
   warpSound: {fileID: 8300000, guid: 223b79203863d204ba314f1cdf17582c, type: 3}
+  cameraManager: {fileID: 1150767810}
+  stopMovementDuration: 3
 --- !u!65 &1665287921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13272,6 +13274,8 @@ MonoBehaviour:
   nextIsland: {fileID: 1909444268}
   audioSource: {fileID: 1108295503}
   warpSound: {fileID: 8300000, guid: 223b79203863d204ba314f1cdf17582c, type: 3}
+  cameraManager: {fileID: 1150767810}
+  stopMovementDuration: 3
 --- !u!65 &2020462832
 BoxCollider:
   m_ObjectHideFlags: 0
