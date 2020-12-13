@@ -428,6 +428,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   equipment: {fileID: 11400000, guid: 804647518c663904fbc16ef0e02d9ad4, type: 2}
+  audioSource: {fileID: 0}
+  gunPickup: {fileID: 8300000, guid: 160a067161dd7c84f817c1ad39b5f1c5, type: 3}
 --- !u!54 &3900325042832572109
 Rigidbody:
   m_ObjectHideFlags: 0

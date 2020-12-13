@@ -5,6 +5,8 @@ using UnityEngine;
 public class HealthPickup : Interactable
 {
     public HealthPack healthPack;
+    public AudioSource audioSource;
+    public AudioClip interactSound;
     public override void Interact()
     {
         base.Interact();
@@ -16,7 +18,9 @@ public class HealthPickup : Interactable
     {
 
         bool successfulPickup = HealthManager.instance.AddHealthPack();
-        if (successfulPickup)
+        if (successfulPickup) {
+            audioSource.PlayOneShot(interactSound);
             Destroy(gameObject);
+        }
     }
 }

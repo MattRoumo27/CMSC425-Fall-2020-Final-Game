@@ -5,6 +5,9 @@ using UnityEngine;
 public class AimTargetBehavior : MonoBehaviour
 {
     public AimTarget target;
+    AudioSource audioSource;
+    public AudioClip targetShotSound;
+
     public Transform bridge;
     public Vector3 startPos;
     public Vector3 endPos;
@@ -19,10 +22,12 @@ public class AimTargetBehavior : MonoBehaviour
     {
         startPos = bridge.localPosition;
         endPos = new Vector3(0.4524f, 0.053f, 0.984f);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void killAimTarget()
     {
+        audioSource.PlayOneShot(targetShotSound);
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         target.TargetHit(this);

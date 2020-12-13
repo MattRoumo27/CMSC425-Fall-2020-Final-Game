@@ -7,7 +7,8 @@ public class ItemChest : Interactable
     public float angleOpened = 110; // X-axis Euler angle when opened.
     public float angleClosed = 0;   // X-axis Euler angle when closed.
 
-    public float flapTime = 3; // Number of seconds for to open or close.
+    public float openTime = 1.413f;
+    public float closeTime = 0.603f;
 
     Quaternion rotOpened; // Rotation when fully opened.
     Quaternion rotClosed; // Rotation when full closed.
@@ -19,12 +20,16 @@ public class ItemChest : Interactable
     // to one, or from one to zero.
     float changeSign;
 
+    AudioSource audioSource;
+    public AudioClip chestOpenSound;
+    public AudioClip chestCloseSound;
+
     private void Start()
     {
         // Create and remember the open/closed quaternions.
-
         rotOpened = Quaternion.Euler(angleOpened, 0, 0);
         rotClosed = Quaternion.Euler(angleClosed, 0, 0);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void Interact()
@@ -54,6 +59,7 @@ public class ItemChest : Interactable
         // to interpolate between our quaternions.
 
         float interpolationParameter;
+        float duration;
 
 
         // Set lerp parameter to match our state, and the sign
@@ -64,19 +70,22 @@ public class ItemChest : Interactable
         {
             interpolationParameter = 0;
             changeSign = 1;
+            duration = openTime;
+            audioSource.PlayOneShot(chestOpenSound);
         }
         else
         {
             interpolationParameter = 1;
             changeSign = -1;
+            duration = closeTime;
+            audioSource.PlayOneShot(chestCloseSound);
         }
 
         while (isFlapping)
         {
             // Change our "lerp" parameter according to speed and time,
             // and according to whether we are opening or closing.
-
-            interpolationParameter = interpolationParameter + changeSign * Time.deltaTime / flapTime;
+            interpolationParameter = interpolationParameter + changeSign * Time.deltaTime / duration;
 
             // At or past either end of the lerp parameter's range means
             // we are on our last step.

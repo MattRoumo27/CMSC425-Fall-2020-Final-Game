@@ -128,13 +128,13 @@ public class Raycast : MonoBehaviour
             }
             else if (hit.collider.CompareTag("HealthPack")){
                 CrossHairActive();
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E)) {
                     interactable.Interact();
+                }
             }
             else if (hit.collider.CompareTag("ItemChest")){
                 CrossHairActive();
                 if (Input.GetKeyDown(KeyCode.E)) {
-                    Debug.Log(interactable);
                     interactable.Interact();
                 }
             }
