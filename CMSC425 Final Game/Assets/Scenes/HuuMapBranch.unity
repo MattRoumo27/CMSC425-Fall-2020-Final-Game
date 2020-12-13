@@ -3251,6 +3251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intensity: 5
   smooth: 10
+  originRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &411505417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5379,7 +5380,7 @@ PrefabInstance:
     - target: {fileID: 3369835853068851102, guid: 2394fb2256b498a41b6142005b9576b2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3369835853068851102, guid: 2394fb2256b498a41b6142005b9576b2,
         type: 3}
@@ -7183,6 +7184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1366799847}
   healthValue: {fileID: 1061331569}
+  pauseMenu: {fileID: 1150767809}
   maxHealth: 100
 --- !u!114 &1108295498
 MonoBehaviour:
@@ -7267,7 +7269,7 @@ Transform:
   - {fileID: 1117185212}
   - {fileID: 818815628}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1108295503
 AudioSource:
@@ -7825,7 +7827,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1150767809
 MonoBehaviour:
@@ -7840,6 +7842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 750436207}
+  deathMenuUI: {fileID: 1802041486}
   primaryGun: {fileID: 398730231}
   secondaryGun: {fileID: 1652448231}
   targets: {fileID: 11400000, guid: 6fc0534f6af82ff40b22cd4e22d86634, type: 2}
@@ -8279,7 +8282,7 @@ Transform:
   m_Children:
   - {fileID: 1791007981}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1217513062 stripped
 Transform:
@@ -9796,7 +9799,7 @@ PrefabInstance:
     - target: {fileID: 5890529065630888824, guid: bb57c1e01794ba34cb07e4798e196cf8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5890529065630888824, guid: bb57c1e01794ba34cb07e4798e196cf8,
         type: 3}
@@ -10193,9 +10196,9 @@ Transform:
   m_LocalPosition: {x: -2.6606388, y: -3.0272255, z: 0.2449102}
   m_LocalScale: {x: 0.033333335, y: 1, z: 0.06666667}
   m_Children:
+  - {fileID: 1148278266}
   - {fileID: 122692912}
   - {fileID: 2252129}
-  - {fileID: 1148278266}
   - {fileID: 944090572}
   m_Father: {fileID: 1708176049}
   m_RootOrder: 4
@@ -10393,7 +10396,7 @@ RectTransform:
   m_Children:
   - {fileID: 1354451740}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11001,6 +11004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intensity: 2.5
   smooth: 10
+  originRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &1656721269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11125,8 +11129,8 @@ MonoBehaviour:
   zombie: {fileID: 2694931294453138824, guid: 77b3e590525c0476fa5fbd7ed2310d2c, type: 3}
   currIsland: {fileID: 1909444268}
   nextIsland: {fileID: 1526984161}
-  audioSource: {fileID: 1108295503}
-  warpSound: {fileID: 8300000, guid: 223b79203863d204ba314f1cdf17582c, type: 3}
+  audioSource: {fileID: 0}
+  warpSound: {fileID: 0}
 --- !u!65 &1665287921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11509,7 +11513,7 @@ Transform:
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1746226564
 PrefabInstance:
@@ -12565,46 +12569,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 398730230}
     m_Modifications:
-    - target: {fileID: 6175486292740197413, guid: 9980a9d91e848b543afdfc46a0cfbe93,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175486292740197413, guid: 9980a9d91e848b543afdfc46a0cfbe93,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175486292740197413, guid: 9980a9d91e848b543afdfc46a0cfbe93,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175486292740197413, guid: 9980a9d91e848b543afdfc46a0cfbe93,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175486292740197413, guid: 9980a9d91e848b543afdfc46a0cfbe93,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175486292740197413, guid: 9980a9d91e848b543afdfc46a0cfbe93,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175486292740197413, guid: 9980a9d91e848b543afdfc46a0cfbe93,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6175486292740197413, guid: 9980a9d91e848b543afdfc46a0cfbe93,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.439
-      objectReference: {fileID: 0}
     - target: {fileID: 474055554387004485, guid: 7e2f328236bd80d47bd946d66dd686e8,
         type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -13201,8 +13165,8 @@ MonoBehaviour:
   zombie: {fileID: 2694931294453138824, guid: 77b3e590525c0476fa5fbd7ed2310d2c, type: 3}
   currIsland: {fileID: 1457712961}
   nextIsland: {fileID: 1909444268}
-  audioSource: {fileID: 1108295503}
-  warpSound: {fileID: 8300000, guid: 223b79203863d204ba314f1cdf17582c, type: 3}
+  audioSource: {fileID: 0}
+  warpSound: {fileID: 0}
 --- !u!65 &2020462832
 BoxCollider:
   m_ObjectHideFlags: 0
