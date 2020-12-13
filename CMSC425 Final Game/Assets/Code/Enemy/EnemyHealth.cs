@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
@@ -19,10 +20,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public Equipment primaryScriptable;
     public Equipment secondaryScriptable;
 
+    Quaternion deathRotation = Quaternion.Euler(20.493f, 46.73f, -87.494f);
+    Quaternion standingRotation = Quaternion.Euler(0f, 25.021f, 0f);
+    public float deathTime = 0.3f;
+    bool isDying = false;
+    bool hasAlreadyDroppedItem = false;
+
     private void Start() 
     {
         currentHealth = enemyStats.enemyMaxHealth; 
-   
     }
 
     public void DealDamage(int damage) 
@@ -35,8 +41,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         if (currentHealth <= 0)
         {
-            DropItemOnDeath();
-            Destroy(gameObject);
+            StartCoroutine(DeathAnimation());
         }
     }
 
@@ -93,6 +98,34 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             Instantiate(healthPack, transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(90, 0, 90));
         }
 
-
+        hasAlreadyDroppedItem = true;
     }
+
+    IEnumerator DeathAnimation()
+    {
+        isDying = true;
+        float interpolationParameter = 0;
+
+        while (isDying)
+        {
+            interpolationParameter = interpolationParameter + Time.deltaTime / deathTime;
+
+            if (interpolationParameter >= 1)
+            {
+                interpolationParameter = 1;
+                isDying = false;
+            }
+
+            transform.localRotation = Quaternion.Lerp(standingRotation, deathRotation, interpolationParameter);
+            yield return null;
+        }
+
+        if (!hasAlreadyDroppedItem) 
+        {
+            DropItemOnDeath();      
+        }
+        
+        Destroy(gameObject);
+    }
+
 }
