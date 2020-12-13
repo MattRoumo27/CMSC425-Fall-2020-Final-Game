@@ -32,6 +32,7 @@ public class Gun : MonoBehaviour
     bool isAnimating = false;
     private bool isReloading = false;
     Vector3 magazineInitialPos;
+    float changeSign;
 
     public bool isPaused = false;
 
@@ -120,7 +121,6 @@ public class Gun : MonoBehaviour
         }
 
         Vector3 originalPosition = magazineInitialPos;
-        // Vector3 originalPosition = gunMagazine.transform.localPosition + new Vector3(0, 0.15f, 0);
         isAnimating = true;
         while (isAnimating)
         {

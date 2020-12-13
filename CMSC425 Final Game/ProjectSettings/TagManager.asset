@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - AR
+  - Pistol
+  - HealthPack
+  - Equipment
+  - HealthPotion
+  - Bridge
+  - ItemChest
+  - Lever
   layers:
   - Default
   - TransparentFX
@@ -13,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 

@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class Transition : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Transform player;
     public Animator transition;
     public Transform location;
     public GameObject zombie;
     public GameObject currIsland;
     public GameObject nextIsland;
+    public AudioSource audioSource;
+    public AudioClip warpSound;
     //-18,1,19
     //0,90,0
 
+    private void Start() 
+    {
+       //audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("hello");
         StartCoroutine(TransitionPlayer());
     }
 
@@ -32,6 +39,13 @@ public class Transition : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         Debug.Log(player.position);
+        audioSource.PlayOneShot(warpSound);
+
+        nextIsland.SetActive(true);
+        
+        yield return new WaitForSeconds(3);
+        Debug.Log(player.position);
+        
         Vector3 path = location.position;
 
         for (int i = 0; i< 1000; i++)
