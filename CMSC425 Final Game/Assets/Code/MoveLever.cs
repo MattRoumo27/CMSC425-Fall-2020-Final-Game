@@ -20,6 +20,7 @@ public class MoveLever : Interactable
 
     public float switchAnimationTime = 1f;
     public float bridgeAnimationTime = 2f;
+    public GameObject wall;
 
     #region Bridge Vars
     public GameObject bridge;
@@ -59,11 +60,13 @@ public class MoveLever : Interactable
     {
         base.Interact();
         StartCoroutine(SwitchOnOff());
+        wall.SetActive(!wall.activeSelf);
     }
 
     public IEnumerator SwitchOnOff()
     {
         StartCoroutine(LowerOrRaiseBridge());
+
         if (isAnimatingSwitch)
         {
             changeSwitchSign = -changeSwitchSign;
