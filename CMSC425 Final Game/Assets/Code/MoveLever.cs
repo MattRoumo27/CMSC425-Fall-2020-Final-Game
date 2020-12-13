@@ -14,14 +14,16 @@ public class MoveLever : Interactable
     bool isOff = true;
     bool isAnimatingSwitch = false;
     float changeSwitchSign;
-    AudioSource audioSource;
+    AudioSource switchAudioSource;
     public AudioClip clickSound;
     #endregion 
 
-    public float animationTime = 1f;
+    public float switchAnimationTime = 1f;
+    public float bridgeAnimationTime = 2f;
 
     #region Bridge Vars
-    public Transform bridge;
+    public GameObject bridge;
+    Transform bridgeTransform;
     public float bridgeYRaised = -0.2f;
     public float bridgeYLowered = -2.6f;
 
@@ -31,12 +33,15 @@ public class MoveLever : Interactable
     bool isBridgeLowered = true;
     bool isAnimatingBridge = false;
     float changeBridgeSign;
+    AudioSource bridgeAudioSource;
+    public AudioClip bridgeMovingSound;
     #endregion
 
 
     // Start is called before the first frame update
     private void Start()
     {
+        bridgeTransform = bridge.GetComponent<Transform>();
         // Set Initial values for switch
         rotOff = Quaternion.Euler(switchAngleOff, 0, 0);
         rotOn = Quaternion.Euler(switchAngleOn, 0, 0);
@@ -46,7 +51,8 @@ public class MoveLever : Interactable
         posRaised = new Vector3(-0.807f, bridgeYRaised, 0);
 
         // Set audio components
-        audioSource = GetComponent<AudioSource>();
+        switchAudioSource = GetComponent<AudioSource>();
+        bridgeAudioSource = bridge.GetComponent<AudioSource>();
     }
 
     public override void Interact()
@@ -62,7 +68,7 @@ public class MoveLever : Interactable
         {
             changeSwitchSign = -changeSwitchSign;
             isOff = !isOff;
-            audioSource.PlayOneShot(clickSound);
+            switchAudioSource.PlayOneShot(clickSound);
             yield break;
         }
 
@@ -81,11 +87,11 @@ public class MoveLever : Interactable
             changeSwitchSign = -1;
         }
 
-        audioSource.PlayOneShot(clickSound);
+        switchAudioSource.PlayOneShot(clickSound);
 
         while (isAnimatingSwitch)
         {
-            interpolationParameter = interpolationParameter + changeSwitchSign * Time.deltaTime / animationTime;
+            interpolationParameter = interpolationParameter + changeSwitchSign * Time.deltaTime / switchAnimationTime;
 
             // Clamp the interpolation parameter
             if (interpolationParameter >= 1 || interpolationParameter <= 0)
@@ -112,6 +118,7 @@ public class MoveLever : Interactable
         {
             changeBridgeSign = -changeBridgeSign;
             isBridgeLowered = !isBridgeLowered;
+            bridgeAudioSource.PlayOneShot(bridgeMovingSound);
             yield break;
         }
 
@@ -130,9 +137,10 @@ public class MoveLever : Interactable
             changeBridgeSign = -1;
         }
 
+        bridgeAudioSource.PlayOneShot(bridgeMovingSound);
         while (isAnimatingBridge)
         {
-            interpolationParameter = interpolationParameter + changeBridgeSign * Time.deltaTime / animationTime;
+            interpolationParameter = interpolationParameter + changeBridgeSign * Time.deltaTime / bridgeAnimationTime;
 
             if (interpolationParameter >= 1 || interpolationParameter <= 0)
             {
@@ -140,7 +148,7 @@ public class MoveLever : Interactable
                 isAnimatingBridge = false;
             }
 
-            bridge.localPosition = Vector3.Lerp(posLowered, posRaised, interpolationParameter);
+            bridgeTransform.localPosition = Vector3.Lerp(posLowered, posRaised, interpolationParameter);
             yield return null;
         }
 
