@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseMenuUI;
     private bool isPaused = false;
 
+    [SerializeField] private GameObject deathMenuUI;
+
     public Gun primaryGun;
     public Gun secondaryGun;
     public AimTarget targets;
@@ -64,5 +66,16 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         primaryGun.isPaused = false;
         secondaryGun.isPaused = false;
+    }
+
+    public void OnDeath()
+    {
+        deathMenuUI.SetActive(true);
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+        Cursor.lockState = CursorLockMode.None;
+        primaryGun.isPaused = true;
+        secondaryGun.isPaused = true;
+        isPaused = true;
     }
 }
