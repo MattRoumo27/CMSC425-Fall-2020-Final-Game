@@ -14,6 +14,11 @@ public class Tracker : MonoBehaviour
     {
 
         target = GameObject.Find("Player").transform;
+        if (!target)
+        {
+            Debug.Log("DIDNT GET PLAYER");
+        }
+
         agent = GetComponent<NavMeshAgent>();
         destination = agent.destination;
     }
