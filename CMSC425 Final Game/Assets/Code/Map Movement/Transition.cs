@@ -15,11 +15,6 @@ public class Transition : MonoBehaviour
     //-18,1,19
     //0,90,0
 
-    private void Start() 
-    {
-       //audioSource = GetComponent<AudioSource>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         StartCoroutine(TransitionPlayer());
