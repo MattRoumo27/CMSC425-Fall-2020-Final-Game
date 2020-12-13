@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Gun : MonoBehaviour
 {
-    public int damage = 10;
+    public float damage = 10f;
     public float range = 100f;
     public float impactForce = 30f;
     public float fireRate = 15f;
@@ -32,6 +32,7 @@ public class Gun : MonoBehaviour
     bool isAnimating = false;
     private bool isReloading = false;
     Vector3 magazineInitialPos;
+    float changeSign;
 
     public bool isPaused = false;
 
@@ -120,7 +121,6 @@ public class Gun : MonoBehaviour
         }
 
         Vector3 originalPosition = magazineInitialPos;
-        // Vector3 originalPosition = gunMagazine.transform.localPosition + new Vector3(0, 0.15f, 0);
         isAnimating = true;
         while (isAnimating)
         {
@@ -156,10 +156,10 @@ public class Gun : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+            Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
-                target.DealDamage(damage);
+                target.TakeDamage(damage);
             }
 
             if (hit.rigidbody != null)
