@@ -8,12 +8,12 @@ public class PlayerStats : MonoBehaviour
 
     public HealthBar healthBar;
     public Text healthValue;
-   
+
     public int currentHealth { get; private set; }
 
     public int maxHealth = 100;
 
-   
+
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour
     {
 
         damage = Mathf.Clamp(damage, 0, damage);
-       //GameObject points =  Instantiate(floatingDamage, transform.position, Quaternion.identity) as GameObject;
+        //GameObject points =  Instantiate(floatingDamage, transform.position, Quaternion.identity) as GameObject;
         //points.transform.GetChild(0).GetComponent<TextMesh>().text = "" + damage;
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
@@ -44,6 +44,7 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             //Die
+            Debug.Log("player hads died RIP");
         }
     }
 

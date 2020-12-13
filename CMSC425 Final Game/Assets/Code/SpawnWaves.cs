@@ -25,15 +25,15 @@ public class SpawnWaves : MonoBehaviour
     IEnumerator ReleaseTheHorde()
     {
 
-        for (int t = 0; t < 5; t++)
-        {
-            yield return new WaitForSeconds(3);
-            int i = Random.Range(0, 3);
-            Instantiate(zombie, SpawnPoints[i], Quaternion.identity);
-        }
+        //for (int t = 0; t < 5; t++)
+        //{
+        //    yield return new WaitForSeconds(3);
+        //    int i = Random.Range(0, 3);
+        //    Instantiate(zombie, SpawnPoints[i], Quaternion.identity);
+        //}
 
-        //int i = Random.Range(0, 3);
-        //Instantiate(zombie, SpawnPoints[i], Quaternion.identity);
+        int i = Random.Range(0, 3);
+        Instantiate(zombie, SpawnPoints[i], Quaternion.identity);
 
 
 
