@@ -52,7 +52,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
             GameObject primaryWeapon = Instantiate(primary, transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(0, 0, 90));
             Equipment primaryWep = Instantiate(primaryScriptable);
-            if (zone == 2)
+            if (zone == 1)
+            {
+                primaryWep.damageModifier = 10;
+            }
+            else if (zone == 2)
             {
                 primaryWep.damageModifier = 10 + Random.Range(5, 10);
 
@@ -69,7 +73,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             GameObject secondaryWeapon = Instantiate(secondary, transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(0, 0, 90));
             Equipment secondaryWep = Instantiate(secondaryScriptable);
 
-            if (zone == 2)
+            if (zone == 1)
+            {
+                secondaryWep.damageModifier = 5;
+            }
+            else if (zone == 2)
             {
                 secondaryWep.damageModifier = 5 + Random.Range(5, 10);
             }

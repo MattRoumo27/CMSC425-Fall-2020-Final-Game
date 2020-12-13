@@ -29,7 +29,8 @@ public class SpawnWaves : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
             int i = Random.Range(0, 3);
-            Instantiate(zombie, SpawnPoints[i], Quaternion.identity);
+            GameObject zombie1 = Instantiate(zombie, SpawnPoints[i], Quaternion.identity);
+            zombie1.GetComponent<EnemyHealth>().zone = 1;
         }
 
         //int i = Random.Range(0, 3);
