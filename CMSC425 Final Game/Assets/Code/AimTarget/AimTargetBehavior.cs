@@ -9,6 +9,7 @@ public class AimTargetBehavior : MonoBehaviour
     public Vector3 startPos;
     public Vector3 endPos;
     public CameraManager cameraManager;
+    public GameObject wall;
 
     public float raiseTime = 5;
 
@@ -34,6 +35,7 @@ public class AimTargetBehavior : MonoBehaviour
             yield break;
         }
 
+        wall.SetActive(false);
         float interpolationParameter = 0;
         isRaising = true;
 

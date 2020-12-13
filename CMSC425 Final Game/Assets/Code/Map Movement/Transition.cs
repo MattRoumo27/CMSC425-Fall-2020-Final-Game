@@ -9,6 +9,9 @@ public class Transition : MonoBehaviour
     public Animator transition;
     public Transform location;
     public GameObject zombie;
+    public bool changeIsland;
+    public GameObject currIsland;
+    public GameObject nextIsland;
     //-18,1,19
     //0,90,0
 
@@ -21,6 +24,11 @@ public class Transition : MonoBehaviour
     IEnumerator TransitionPlayer(int levelIndex)
     {
         transition.SetTrigger("Start");
+
+      
+        
+        nextIsland.SetActive(true);
+        
 
         yield return new WaitForSeconds(1);
         Debug.Log(player.position);
@@ -42,6 +50,10 @@ public class Transition : MonoBehaviour
         player.eulerAngles = new Vector3(0, 90, 0);
 
         transition.SetTrigger("End");
+
+      
+        currIsland.SetActive(false);
+  
 
 
         yield return null;
