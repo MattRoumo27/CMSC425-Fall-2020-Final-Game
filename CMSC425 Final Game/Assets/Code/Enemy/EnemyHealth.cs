@@ -49,40 +49,35 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         else if (item == "Primary")
         {
+
+            GameObject primaryWeapon = Instantiate(primary, transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(0, 0, 90));
+            Equipment primaryWep = Instantiate(primaryScriptable);
             if (zone == 2)
             {
-                GameObject primaryWeapon = Instantiate(primary, transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(0, 0, 90));
-                Equipment primaryWep = Instantiate(primaryScriptable);
                 primaryWep.damageModifier = 10 + Random.Range(5, 10);
-                primaryWeapon.GetComponent<EquipmentPickup>().equipment = primaryWep;
+
             }
             else if (zone == 3)
             {
-                GameObject primaryWeapon = Instantiate(primary, transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(0, 0, 90));
-                Equipment primaryWep = Instantiate(primaryScriptable);
                 primaryWep.damageModifier = 10 + Random.Range(10, 15);
-                primaryWeapon.GetComponent<EquipmentPickup>().equipment = primaryWep;
             }
+            primaryWeapon.GetComponent<EquipmentPickup>().equipment = primaryWep;
         }
 
         else if (item == "Secondary")
         {
+            GameObject secondaryWeapon = Instantiate(secondary, transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(0, 0, 90));
+            Equipment secondaryWep = Instantiate(secondaryScriptable);
+
             if (zone == 2)
             {
-                GameObject secondaryWeapon = Instantiate(secondary, transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(0, 0, 90));
-                Equipment secondaryWep = Instantiate(secondaryScriptable);
                 secondaryWep.damageModifier = 5 + Random.Range(5, 10);
-                secondaryWeapon.GetComponent<EquipmentPickup>().equipment = secondaryWep;
-     
-
             }
             else if (zone == 3)
             {
-                GameObject secondaryWeapon = Instantiate(secondary, transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(0, 0, 90));
-                Equipment secondaryWep = Instantiate(secondaryScriptable);
                 secondaryWep.damageModifier = 5 + Random.Range(10, 15);
-                secondaryWeapon.GetComponent<EquipmentPickup>().equipment = secondaryWep;
             }
+            secondaryWeapon.GetComponent<EquipmentPickup>().equipment = secondaryWep;
         }
 
         else if (item == "HealthPack")
