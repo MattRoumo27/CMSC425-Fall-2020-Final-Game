@@ -14,6 +14,7 @@ public class Tracker : MonoBehaviour
         // Cache agent component and destination
         agent = GetComponent<NavMeshAgent>();
         destination = agent.destination;
+        target = GameObject.Find("Player").transform;
     }
 
     void Update()
