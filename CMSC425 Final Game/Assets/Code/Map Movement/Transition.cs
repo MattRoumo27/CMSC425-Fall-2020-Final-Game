@@ -36,8 +36,6 @@ public class Transition : MonoBehaviour
         
         nextIsland.SetActive(true);
         
-
-        yield return new WaitForSeconds(1);
         Debug.Log(player.position);
         audioSource.PlayOneShot(warpSound);
 
