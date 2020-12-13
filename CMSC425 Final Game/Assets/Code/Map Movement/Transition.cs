@@ -21,6 +21,7 @@ public class Transition : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("hello");
         StartCoroutine(TransitionPlayer());
     }
 
