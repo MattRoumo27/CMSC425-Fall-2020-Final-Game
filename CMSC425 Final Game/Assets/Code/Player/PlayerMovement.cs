@@ -20,16 +20,21 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
+    public CameraManager cameraManager;
+
     private void Update() 
     {
-        Jump();
-        Move();
-        PlayFootStepSounds();
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0) 
+        if (cameraManager.canMovePlayer)
         {
-            velocity.y = -2f;
+            Jump();
+            Move();
+            PlayFootStepSounds();
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+            if (isGrounded && velocity.y < 0) 
+            {
+                velocity.y = -2f;
+            }
         }
     }
 
@@ -49,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayFootStepSounds() 
     {
-        if (isGrounded && controller && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
+        if (isGrounded && (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0))
         {
             audioSource.clip = footsteps;
             if (!audioSource.isPlaying)

@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
 
     public Gun primaryGun;
     public Gun secondaryGun;
+    public AimTarget targets;
 
     // Update is called once per frame
     void Update()
@@ -49,8 +50,9 @@ public class PauseMenu : MonoBehaviour
         StartCoroutine(WaitBeforeFiring());
     }
 
-    public void Restart()
-    {
+    public void Restart() {
+        targets.numberOfTargetsAlive = targets.initialTargetsAlive;
+
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         DeactivateMenu();

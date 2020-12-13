@@ -15,5 +15,4 @@ MonoBehaviour:
   name: PrimaryWeapon
   icon: {fileID: 21300000, guid: 364206cb355dcf7479b2cdec20b8ec68, type: 3}
   equipSlot: 0
-  armorModifier: 0
   damageModifier: 10

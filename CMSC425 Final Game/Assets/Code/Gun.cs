@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Gun : MonoBehaviour
 {
-    public float damage = 10f;
+    public int damage = 10;
     public float range = 100f;
     public float impactForce = 30f;
     public float fireRate = 15f;
@@ -16,6 +16,7 @@ public class Gun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public ParticleSystem sparkFlash;
     public GameObject impactEffect;
+
     public PlayerManager playerManager;
 
     private float nextTimeToFire = 0f;
@@ -98,7 +99,6 @@ public class Gun : MonoBehaviour
 
         float interpolationParameter = 1;
         Debug.Log("Reloading...");
-
         audioSource.PlayOneShot(reloadSound);
         Vector3 newPosition = gunMagazine.transform.localPosition - new Vector3(0, 0.15f, 0);
 
@@ -156,15 +156,21 @@ public class Gun : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
+            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.DealDamage(damage);
             }
 
             if (hit.rigidbody != null)
             {
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
+            }
+
+            AimTargetBehavior aimTarget = hit.transform.GetComponent<AimTargetBehavior>();
+            if (aimTarget != null)
+            {
+                aimTarget.killAimTarget();
             }
 
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
