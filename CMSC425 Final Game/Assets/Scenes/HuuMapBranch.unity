@@ -2055,7 +2055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1526780fa6f498298df399102c7ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombie: {fileID: 0}
+  zombie: {fileID: 2694931294453138824, guid: 77b3e590525c0476fa5fbd7ed2310d2c, type: 3}
 --- !u!65 &276358206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7271,7 +7271,7 @@ GameObject:
   - component: {fileID: 1108295503}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
