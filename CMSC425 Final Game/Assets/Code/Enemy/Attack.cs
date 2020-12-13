@@ -15,9 +15,13 @@ public class Attack : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.gameObject.tag);
 
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(10);
+        }
     }
 }
