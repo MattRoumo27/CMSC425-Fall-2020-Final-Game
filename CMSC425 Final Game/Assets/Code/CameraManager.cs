@@ -25,7 +25,7 @@ public class CameraManager : MonoBehaviour
         cameras[bridgeCamera].enabled = false;
         startPos = new Vector3(73.05f, 1.7f, 98.27f);
         endPos = new Vector3(73.05f, 1.7f, 91.22f);
-        
+
         cameras[1].transform.position = startPos;
     }
 
@@ -59,4 +59,12 @@ public class CameraManager : MonoBehaviour
         cameras[mainCamera].enabled = true;
         canMovePlayer = true;
     }
+    public IEnumerator LockMovement(int duration)
+    {
+        canMovePlayer = false;
+        yield return new WaitForSeconds(duration);
+        canMovePlayer = true;
+        yield return null;
+    }
+
 }

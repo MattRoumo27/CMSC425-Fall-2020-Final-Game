@@ -12,6 +12,8 @@ public class Transition : MonoBehaviour
     public GameObject nextIsland;
     public AudioSource audioSource;
     public AudioClip warpSound;
+    public CameraManager cameraManager;
+    public int stopMovementDuration = 3;
     //-18,1,19
     //0,90,0
 
@@ -32,16 +34,15 @@ public class Transition : MonoBehaviour
         Debug.Log("Fading out...");
         transition.SetTrigger("Start");
 
-      
+        StartCoroutine(cameraManager.LockMovement(stopMovementDuration));
         
+
         nextIsland.SetActive(true);
         
 
         yield return new WaitForSeconds(1);
         Debug.Log(player.position);
         audioSource.PlayOneShot(warpSound);
-
-        nextIsland.SetActive(true);
         
         yield return new WaitForSeconds(3);
         Debug.Log(player.position);
