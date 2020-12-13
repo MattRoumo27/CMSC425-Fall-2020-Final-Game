@@ -2778,7 +2778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b94aa0167783c9478489215e438c21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 1
+  intensity: 2.5
   smooth: 10
 --- !u!1001 &411505417
 PrefabInstance:
@@ -10059,7 +10059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b94aa0167783c9478489215e438c21a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 1
+  intensity: 2.5
   smooth: 10
 --- !u!1001 &1656721269
 PrefabInstance:
