@@ -353,6 +353,7 @@ MonoBehaviour:
   primaryScriptable: {fileID: 11400000, guid: 31a7030ff88b7b74eaa9cf6acd904e9a, type: 2}
   secondaryScriptable: {fileID: 11400000, guid: da867fa64c2cebb45a5d413170f3b217,
     type: 2}
+  deathTime: 0.34
 --- !u!114 &2694931294453138830
 MonoBehaviour:
   m_ObjectHideFlags: 0
