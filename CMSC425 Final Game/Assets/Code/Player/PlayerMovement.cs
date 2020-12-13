@@ -20,18 +20,22 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
+    public CameraManager cameraManager;
+
     private void Update() 
     {
-        Jump();
-        Move();
-        PlayFootStepSounds();
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0) 
+        if (cameraManager.canMovePlayer)
         {
-            velocity.y = -2f;
-        }
+            Jump();
+            Move();
+            PlayFootStepSounds();
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+            if (isGrounded && velocity.y < 0) 
+            {
+                velocity.y = -2f;
+            }
+        }
     }
 
     private void Move() 

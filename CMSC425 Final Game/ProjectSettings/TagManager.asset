@@ -10,6 +10,7 @@ TagManager:
   - Equipment
   - HealthPotion
   - Bridge
+  - ItemChest
   layers:
   - Default
   - TransparentFX
