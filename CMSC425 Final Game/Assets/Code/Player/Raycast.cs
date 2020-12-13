@@ -138,7 +138,14 @@ public class Raycast : MonoBehaviour
                     interactable.Interact();
                 }
             }
-
+            else if (hit.collider.CompareTag("Lever"))
+            {
+                CrossHairActive();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    interactable.Interact();
+                }
+            }
         } 
 
         else
