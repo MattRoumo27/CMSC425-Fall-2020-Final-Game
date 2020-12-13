@@ -5,13 +5,15 @@ using UnityEngine.AI;
 
 public class Tracker : MonoBehaviour
 {
-    public Transform target;
+    Transform target;
+    //public Transform target;
     Vector3 destination;
     NavMeshAgent agent;
 
     void Start()
     {
-        // Cache agent component and destination
+
+        target = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         destination = agent.destination;
     }

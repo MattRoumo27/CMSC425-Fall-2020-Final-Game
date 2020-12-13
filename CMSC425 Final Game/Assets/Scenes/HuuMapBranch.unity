@@ -566,9 +566,6 @@ MonoBehaviour:
   transition: {fileID: 1545159949}
   location: {fileID: 1109260000}
   zombie: {fileID: 0}
-  changeIsland: 0
-  currIsland: {fileID: 0}
-  nextIsland: {fileID: 0}
 --- !u!65 &109540137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4854,6 +4851,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 185207286880b5e44a7940a40f7f409c, type: 3}
+--- !u!1001 &730500856
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2694931294453138824, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_Name
+      value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 28.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327457637515583282, guid: 77b3e590525c0476fa5fbd7ed2310d2c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77b3e590525c0476fa5fbd7ed2310d2c, type: 3}
 --- !u!4 &742144607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6239969156481072347, guid: b71b0f8d2f881c743a85228f3030d1cb,
@@ -8969,12 +9035,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d57e371ebbd018f458be73d34f70900b, type: 3}
---- !u!1 &1457712961 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7486114120955855211, guid: bb57c1e01794ba34cb07e4798e196cf8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1458282146}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1458282146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9435,12 +9495,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1526984161 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1774231345906427277, guid: 2394fb2256b498a41b6142005b9576b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 788348214}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1545159947
 GameObject:
   m_ObjectHideFlags: 0
@@ -10144,9 +10198,6 @@ MonoBehaviour:
   transition: {fileID: 1545159949}
   location: {fileID: 1503041486}
   zombie: {fileID: 0}
-  changeIsland: 0
-  currIsland: {fileID: 1909444268}
-  nextIsland: {fileID: 1526984161}
 --- !u!65 &1665287921
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12007,9 +12058,6 @@ MonoBehaviour:
   transition: {fileID: 1545159949}
   location: {fileID: 1109260000}
   zombie: {fileID: 2694931294453138824, guid: 77b3e590525c0476fa5fbd7ed2310d2c, type: 3}
-  changeIsland: 0
-  currIsland: {fileID: 1457712961}
-  nextIsland: {fileID: 1909444268}
 --- !u!65 &2020462832
 BoxCollider:
   m_ObjectHideFlags: 0
