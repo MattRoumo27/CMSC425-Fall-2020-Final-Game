@@ -7118,6 +7118,8 @@ MonoBehaviour:
   isMoving: 0
   canMovePlayer: 1
   moveTime: 5
+  audioSource: {fileID: 1108295503}
+  bridgeMusic: {fileID: 8300000, guid: f9ce11f2bf42eee49be2698549e3ac52, type: 3}
 --- !u!4 &1150926163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6766557550984586008, guid: 185207286880b5e44a7940a40f7f409c,
