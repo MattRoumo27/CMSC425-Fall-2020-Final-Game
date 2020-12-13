@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Transition : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Transform player;
     public Animator transition;
     public Transform location;
+    AudioSource audioSource;
+    public AudioClip warpSound;
     //-18,1,19
     //0,90,0
+
+    private void Start() 
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,9 +26,11 @@ public class Transition : MonoBehaviour
     IEnumerator TransitionPlayer(int levelIndex)
     {
         transition.SetTrigger("Start");
+        audioSource.PlayOneShot(warpSound);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         Debug.Log(player.position);
+        
         Vector3 path = location.position;
         for (int i = 0; i< 1000; i++)
         {
