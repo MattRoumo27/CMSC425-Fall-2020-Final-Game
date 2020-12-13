@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour
 
     public HealthBar healthBar;
     public Text healthValue;
+
+    public PauseMenu pauseMenu;
    
     public int currentHealth { get; private set; }
 
@@ -44,6 +46,7 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             //Die
+            pauseMenu.OnDeath();
         }
     }
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Gun : MonoBehaviour
 {
-    public float damage = 10f;
+    public int damage = 10;
     public float range = 100f;
     public float impactForce = 30f;
     public float fireRate = 15f;
@@ -156,10 +156,10 @@ public class Gun : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
+            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target != null)
             {
-                target.TakeDamage(damage);
+                target.DealDamage(damage);
             }
 
             if (hit.rigidbody != null)

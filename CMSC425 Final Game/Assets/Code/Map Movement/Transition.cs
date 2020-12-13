@@ -31,6 +31,14 @@ public class Transition : MonoBehaviour
     {
         Debug.Log("Fading out...");
         transition.SetTrigger("Start");
+
+      
+        
+        nextIsland.SetActive(true);
+        
+
+        yield return new WaitForSeconds(1);
+        Debug.Log(player.position);
         audioSource.PlayOneShot(warpSound);
 
         nextIsland.SetActive(true);
@@ -49,9 +57,13 @@ public class Transition : MonoBehaviour
         //spawn enemies for zone1
         if (location.name == "Landing1")
         {
-            Instantiate(zombie, new Vector3(65, .82f, 71), Quaternion.identity);
-            Instantiate(zombie, new Vector3(47, .82f, 70), Quaternion.identity);
-            Instantiate(zombie, new Vector3(64, .82f, 65), Quaternion.identity);
+            GameObject zombie1 = Instantiate(zombie, new Vector3(65, .82f, 71), Quaternion.identity);
+            GameObject zombie2 = Instantiate(zombie, new Vector3(47, .82f, 70), Quaternion.identity);
+            GameObject zombie3 = Instantiate(zombie, new Vector3(64, .82f, 65), Quaternion.identity);
+
+            zombie1.GetComponent<EnemyHealth>().zone = 2;
+            zombie2.GetComponent<EnemyHealth>().zone = 2;
+            zombie3.GetComponent<EnemyHealth>().zone = 2;
         }
 
         player.eulerAngles = new Vector3(0, 90, 0);

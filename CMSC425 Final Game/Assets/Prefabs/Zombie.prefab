@@ -263,7 +263,6 @@ GameObject:
   - component: {fileID: 3327457637515583282}
   - component: {fileID: 2694931294453138834}
   - component: {fileID: 2694931294453138829}
-  - component: {fileID: 2694931294453138828}
   - component: {fileID: 2694931294453138831}
   - component: {fileID: 2694931294453138830}
   - component: {fileID: 2694931294453138825}
@@ -318,7 +317,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2694931294453138828
+--- !u!114 &2694931294453138831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,23 +326,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2694931294453138824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb895f1512b502a4288ae6b2b41a94a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
---- !u!114 &2694931294453138831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2694931294453138824}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3c27ea2d08968643bfe45b8efc36227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 6d1af0ddf4659f34085a86544a0f5f34, type: 2}
+  zone: 0
+  currentHealth: 0
+  primary: {fileID: 3900325042832572083, guid: 7e2f328236bd80d47bd946d66dd686e8, type: 3}
+  secondary: {fileID: 1041767809497680186, guid: d4b1f118f159a7045be7cd6e34975981,
+    type: 3}
+  healthPack: {fileID: 2733419711961325240, guid: 7ab8e977fb0b89543a41d527de835e05,
+    type: 3}
+  primaryScriptable: {fileID: 11400000, guid: 31a7030ff88b7b74eaa9cf6acd904e9a, type: 2}
+  secondaryScriptable: {fileID: 11400000, guid: da867fa64c2cebb45a5d413170f3b217,
+    type: 2}
 --- !u!114 &2694931294453138830
 MonoBehaviour:
   m_ObjectHideFlags: 0
