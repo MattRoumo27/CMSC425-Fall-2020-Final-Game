@@ -9,7 +9,6 @@ public class Transition : MonoBehaviour
     public Animator transition;
     public Transform location;
     public GameObject zombie;
-    public bool changeIsland;
     public GameObject currIsland;
     public GameObject nextIsland;
     //-18,1,19
@@ -17,12 +16,13 @@ public class Transition : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(TransitionPlayer(0));
+        StartCoroutine(TransitionPlayer());
     }
 
 
-    IEnumerator TransitionPlayer(int levelIndex)
+    IEnumerator TransitionPlayer()
     {
+        Debug.Log("Fading out...");
         transition.SetTrigger("Start");
 
       
@@ -50,6 +50,7 @@ public class Transition : MonoBehaviour
 
         player.eulerAngles = new Vector3(0, 90, 0);
 
+        Debug.Log("Fading in...");
         transition.SetTrigger("End");
 
       
