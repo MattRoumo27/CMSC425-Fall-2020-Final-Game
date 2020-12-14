@@ -27,7 +27,7 @@ public class AimTargetBehavior : MonoBehaviour
 
     public void killAimTarget()
     {
-        audioSource.PlayOneShot(targetShotSound);
+        AudioSource.PlayClipAtPoint(targetShotSound, gameObject.transform.position);
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         target.TargetHit(this);

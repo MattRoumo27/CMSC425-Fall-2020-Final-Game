@@ -47,7 +47,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (currentHealth <= 0)
         {
             AudioSource.PlayClipAtPoint(zombieDeathSound, gameObject.transform.position);
-            //audioSource.PlayOneShot(zombieDeathSound);
             StartCoroutine(DeathAnimation());
         }
     }
