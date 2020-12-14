@@ -59,6 +59,7 @@ public class CameraManager : MonoBehaviour
         cameras[mainCamera].enabled = true;
         canMovePlayer = true;
     }
+    
     public IEnumerator LockMovement(int duration)
     {
         canMovePlayer = false;

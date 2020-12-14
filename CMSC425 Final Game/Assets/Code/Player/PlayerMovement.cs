@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
                 velocity.y = -2f;
             }
         }
+        else 
+        {
+            audioSource.Pause();
+        }
     }
 
     private void Move() 
