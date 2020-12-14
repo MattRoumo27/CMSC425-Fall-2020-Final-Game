@@ -5,13 +5,18 @@ using UnityEngine;
 public class HealthPickup : Interactable
 {
     public HealthPack healthPack;
-    public AudioSource audioSource;
+    AudioSource audioSource;
     public AudioClip interactSound;
     public override void Interact()
     {
         base.Interact();
 
         PickUp();
+    }
+
+    private void Start() 
+    {
+        audioSource = GameObject.Find("Player").GetComponent<AudioSource>();
     }
 
     public void PickUp()

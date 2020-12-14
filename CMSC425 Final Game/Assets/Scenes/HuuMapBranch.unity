@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 11400000, guid: 6fc0534f6af82ff40b22cd4e22d86634, type: 2}
-  targetShotSound: {fileID: 8300000, guid: 1576dbe71f06709448b0f31a08e774c1, type: 3}
+  targetShotSound: {fileID: 8300000, guid: c96846c7f8816474fb1512d19275d760, type: 3}
   bridge: {fileID: 648007257}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 11400000, guid: 6fc0534f6af82ff40b22cd4e22d86634, type: 2}
-  targetShotSound: {fileID: 8300000, guid: 1576dbe71f06709448b0f31a08e774c1, type: 3}
+  targetShotSound: {fileID: 8300000, guid: c96846c7f8816474fb1512d19275d760, type: 3}
   bridge: {fileID: 648007257}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
@@ -7545,7 +7545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 11400000, guid: 6fc0534f6af82ff40b22cd4e22d86634, type: 2}
-  targetShotSound: {fileID: 8300000, guid: 1576dbe71f06709448b0f31a08e774c1, type: 3}
+  targetShotSound: {fileID: 8300000, guid: c96846c7f8816474fb1512d19275d760, type: 3}
   bridge: {fileID: 648007257}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
@@ -8896,6 +8896,12 @@ Transform:
   m_Father: {fileID: 1257127464}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1115618187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5812847353899964639, guid: 4e7384c878ba8d34ab026da92fc810b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2134873060}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1117185211
 GameObject:
   m_ObjectHideFlags: 0
@@ -9118,7 +9124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 11400000, guid: 6fc0534f6af82ff40b22cd4e22d86634, type: 2}
-  targetShotSound: {fileID: 8300000, guid: 1576dbe71f06709448b0f31a08e774c1, type: 3}
+  targetShotSound: {fileID: 8300000, guid: c96846c7f8816474fb1512d19275d760, type: 3}
   bridge: {fileID: 648007257}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
@@ -9268,6 +9274,7 @@ MonoBehaviour:
   healAmount: 30
   playerStats: {fileID: 1108295497}
   healthText: {fileID: 2098627731}
+  healSound: {fileID: 8300000, guid: bb19597356812a44dbaa57ab94f8a429, type: 3}
 --- !u!114 &1150767805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9303,7 +9310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 0}
-  equipmentUI: {fileID: 0}
+  equipmentUI: {fileID: 1115618187}
   playerManager: {fileID: 1108295498}
 --- !u!114 &1150767807
 MonoBehaviour:
@@ -9350,6 +9357,8 @@ MonoBehaviour:
   primaryGun: {fileID: 398730231}
   secondaryGun: {fileID: 1652448231}
   targets: {fileID: 11400000, guid: 6fc0534f6af82ff40b22cd4e22d86634, type: 2}
+  playerSource: {fileID: 1108295503}
+  deathSound: {fileID: 8300000, guid: 680f918eec554ba498c70bef05a20554, type: 3}
 --- !u!114 &1150767810
 MonoBehaviour:
   m_ObjectHideFlags: 0
