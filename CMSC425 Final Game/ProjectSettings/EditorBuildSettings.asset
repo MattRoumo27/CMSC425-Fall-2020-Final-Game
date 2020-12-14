@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/HuuMapBranch.unity
+    guid: b37598a1edf68aa4bb459b2787011388
   m_configObjects: {}
