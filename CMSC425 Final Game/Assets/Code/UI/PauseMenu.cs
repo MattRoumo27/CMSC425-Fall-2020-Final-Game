@@ -14,6 +14,8 @@ public class PauseMenu : MonoBehaviour
     public Gun primaryGun;
     public Gun secondaryGun;
     public AimTarget targets;
+    public AudioSource playerSource;
+    public AudioClip deathSound;
 
     // Update is called once per frame
     void Update()
@@ -68,14 +70,16 @@ public class PauseMenu : MonoBehaviour
         secondaryGun.isPaused = false;
     }
 
-    public void OnDeath()
+    public IEnumerator OnDeath()
     {
         deathMenuUI.SetActive(true);
         Time.timeScale = 0;
-        AudioListener.pause = true;
+        playerSource.PlayOneShot(deathSound);
         Cursor.lockState = CursorLockMode.None;
         primaryGun.isPaused = true;
         secondaryGun.isPaused = true;
         isPaused = true;
+        yield return new WaitForSeconds(1);
+        AudioListener.pause = true;
     }
 }

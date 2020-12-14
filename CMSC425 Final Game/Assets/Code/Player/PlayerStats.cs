@@ -46,7 +46,7 @@ public class PlayerStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             //Die
-            pauseMenu.OnDeath();
+            StartCoroutine(pauseMenu.OnDeath());
         }
     }
 
