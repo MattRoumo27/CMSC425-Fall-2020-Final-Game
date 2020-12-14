@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private GameObject deathMenuUI;
 
+    [SerializeField] private GameObject winMenuUI;
+
     public Gun primaryGun;
     public Gun secondaryGun;
     public AimTarget targets;
@@ -29,7 +31,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-   public void ActivateMenu()
+    public void ActivateMenu()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
@@ -38,10 +40,10 @@ public class PauseMenu : MonoBehaviour
         primaryGun.isPaused = true;
         secondaryGun.isPaused = true;
         isPaused = true;
-        
+
     }
 
-   public void DeactivateMenu()
+    public void DeactivateMenu()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
@@ -54,12 +56,24 @@ public class PauseMenu : MonoBehaviour
         StartCoroutine(WaitBeforeFiring());
     }
 
-    public void Restart() {
+    public void Restart()
+    {
         targets.numberOfTargetsAlive = targets.initialTargetsAlive;
 
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         DeactivateMenu();
+    }
+
+    public void Win()
+    {
+        winMenuUI.SetActive(true);
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+        Cursor.lockState = CursorLockMode.None;
+        primaryGun.isPaused = true;
+        secondaryGun.isPaused = true;
+        isPaused = true;
     }
 
     IEnumerator WaitBeforeFiring()

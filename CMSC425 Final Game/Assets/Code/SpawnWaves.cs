@@ -9,6 +9,8 @@ public class SpawnWaves : MonoBehaviour
     public GameObject zombie;
     Vector3[] SpawnPoints = new Vector3[8];
 
+    public PauseMenu pauseMenu;
+
     public Transform spawn1;
     public Transform spawn2;
     public Transform spawn3;
@@ -88,6 +90,29 @@ public class SpawnWaves : MonoBehaviour
 
         //int i = Random.Range(0, 3);
         //Instantiate(zombie, SpawnPoints[i], Quaternion.identity);
+
+
+        RaycastHit hit;
+        /* while (Physics.SphereCast(transform.position, 50f, transform.forward, out hit, 1, zombieLayer))
+         {
+             Debug.Log("didnt win yet");
+         } */
+
+        for (int i = 0; i < 100; i++)
+        {
+            yield return new WaitForSeconds(2f);
+            if (GameObject.Find("Zombie(Clone)") == null)
+            {
+                yield return new WaitForSeconds(5f);
+                Debug.Log("You win!!!");
+                pauseMenu.Win();
+            }
+            else
+            {
+                Debug.Log("You didnt win");
+            }
+
+        }
 
 
 

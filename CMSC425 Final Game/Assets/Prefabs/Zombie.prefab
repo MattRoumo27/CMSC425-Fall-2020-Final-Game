@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554912623927954739}
   - component: {fileID: 554912623927954736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PivotLegRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554912624331998479}
   - component: {fileID: 554912624331998476}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PivotLegLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 664970357188748731}
   - component: {fileID: 6539940008015034969}
   - component: {fileID: 1610922346167693377}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ArmRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 145568643036769080}
   - component: {fileID: 6205764801722984838}
   - component: {fileID: 6194473694676186193}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LegRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,9 +268,9 @@ GameObject:
   - component: {fileID: 2694931294453138830}
   - component: {fileID: 2694931294453138825}
   - component: {fileID: 3933680716196305407}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 916241651078439192}
   - component: {fileID: 1049951808083567090}
   - component: {fileID: 6627543881182182365}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 4956810321155310998}
   - component: {fileID: 6506299583667596790}
   - component: {fileID: 4299868056063389540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ArmLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 3416449173728098472}
   - component: {fileID: 6255555162475327588}
   - component: {fileID: 1575434448599404460}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 1108384203879426138}
   - component: {fileID: 5833586333970301117}
   - component: {fileID: 1625064864152915721}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LegLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
