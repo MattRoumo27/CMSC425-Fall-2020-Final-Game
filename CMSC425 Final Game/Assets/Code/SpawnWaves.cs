@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnWaves : MonoBehaviour
 {
+    bool waiting_to_start = true;
+
     public GameObject zombie;
     Vector3[] SpawnPoints = new Vector3[8];
 
@@ -46,18 +48,40 @@ public class SpawnWaves : MonoBehaviour
 
     private void OnMouseDown()
     {
-        StartCoroutine(ReleaseTheHorde());
+        if (waiting_to_start)
+        {
+            waiting_to_start = false;
+            StartCoroutine(ReleaseTheHorde());
+        }
+
     }
 
     IEnumerator ReleaseTheHorde()
     {
+        float wait_time = 3f;
 
-        for (int t = 0; t < 5; t++)
+        for (int t = 0; t < 30; t++)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(wait_time);
             int i = Random.Range(0, 8);
             GameObject zombie1 = Instantiate(zombie, SpawnPoints[i], Quaternion.identity);
             zombie1.GetComponent<EnemyHealth>().zone = 3;
+            if (t == 5)
+            {
+                wait_time = 2.0f;
+            }
+            if (t == 10)
+            {
+                wait_time = 1.5f;
+            }
+            if (t == 15)
+            {
+                wait_time = 1.0f;
+            }
+            if (t == 20)
+            {
+                wait_time = .5f;
+            }
         }
 
         //int i = Random.Range(0, 3);
