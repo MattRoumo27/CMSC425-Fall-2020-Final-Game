@@ -22,6 +22,7 @@ public class HealthManager : MonoBehaviour
     public int healAmount = 30;
     public PlayerStats playerStats;
     public Text healthText;
+    public AudioClip healSound;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class HealthManager : MonoBehaviour
             {
                 if (playerStats.currentHealth < playerStats.maxHealth)
                 {
-
+                    playerStats.GetComponent<AudioSource>().PlayOneShot(healSound);
                     playerStats.Heal(healAmount);
                     currentCount -= 1;
                     updateUI();
