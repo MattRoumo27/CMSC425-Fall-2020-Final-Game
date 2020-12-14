@@ -42,11 +42,10 @@ public class Transition : MonoBehaviour
         
         Vector3 path = location.position;
 
-        for (int i = 0; i< 1000; i++)
-        {
-            player.position = path;
-            Debug.Log(player.position);
-        }
+        CharacterController cc = player.GetComponent<CharacterController>();
+        cc.enabled = false;
+        player.position = path;
+        cc.enabled = true;
 
         //spawn enemies for zone1
         if (location.name == "Landing1")
