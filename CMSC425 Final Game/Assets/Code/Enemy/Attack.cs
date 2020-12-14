@@ -5,6 +5,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     GameObject player;
+    public AudioClip zombieHitPlayerSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class Attack : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(10);
+            collision.gameObject.GetComponent<AudioSource>().PlayOneShot(zombieHitPlayerSound);
         }
     }
 }

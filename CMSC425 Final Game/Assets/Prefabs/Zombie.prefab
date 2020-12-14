@@ -331,6 +331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9262139386645e18bfb158e32544fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieHitPlayerSound: {fileID: 8300000, guid: ac164f4d2e0ca3c40914b26f33c2b56c,
+    type: 3}
 --- !u!114 &2694931294453138831
 MonoBehaviour:
   m_ObjectHideFlags: 0
