@@ -16,6 +16,7 @@ public class SpawnWaves : MonoBehaviour
     public Transform spawn5;
     public Transform spawn6;
     public Transform spawn7;
+    public Transform spawn8;
 
 
     // Start is called before the first frame update
@@ -42,6 +43,7 @@ public class SpawnWaves : MonoBehaviour
         SpawnPoints[4] = new Vector3(spawn5.position.x, spawn5.position.y, spawn5.position.z);
         SpawnPoints[5] = new Vector3(spawn6.position.x, spawn6.position.y, spawn6.position.z);
         SpawnPoints[6] = new Vector3(spawn7.position.x, spawn7.position.y, spawn7.position.z);
+        SpawnPoints[7] = new Vector3(spawn8.position.x, spawn8.position.y, spawn8.position.z);
 
 
     }
