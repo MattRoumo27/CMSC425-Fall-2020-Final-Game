@@ -8,6 +8,8 @@ public class Tracker : MonoBehaviour
     public Transform target;
     Vector3 destination;
     NavMeshAgent agent;
+    AudioSource audioSource;
+    public AudioClip zombieWalkingSound;
 
     void Start()
     {
@@ -15,15 +17,19 @@ public class Tracker : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         destination = agent.destination;
         target = GameObject.Find("Player").transform;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = zombieWalkingSound;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     void Update()
     {
-        // Update destination if the target moves one unit
         if (Vector3.Distance(destination, target.position) > 1.0f)
         {
             destination = target.position;
             agent.destination = destination;
         }
+
     }
 }
