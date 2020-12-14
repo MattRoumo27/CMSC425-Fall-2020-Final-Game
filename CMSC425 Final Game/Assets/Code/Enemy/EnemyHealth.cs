@@ -26,9 +26,14 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     bool isDying = false;
     bool hasAlreadyDroppedItem = false;
 
+    // Zombie Audio
+    AudioSource audioSource;
+    public AudioClip zombieDeathSound;
+
     private void Start() 
     {
         currentHealth = enemyStats.enemyMaxHealth; 
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void DealDamage(int damage) 
@@ -41,6 +46,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         if (currentHealth <= 0)
         {
+            AudioSource.PlayClipAtPoint(zombieDeathSound, gameObject.transform.position);
+            //audioSource.PlayOneShot(zombieDeathSound);
             StartCoroutine(DeathAnimation());
         }
     }
@@ -124,7 +131,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             DropItemOnDeath();      
         }
-        
+
         Destroy(gameObject);
     }
 
